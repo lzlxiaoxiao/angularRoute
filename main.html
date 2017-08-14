@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/help.css">
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-sanitize.min.js"></script>
+    <script src="lib/angular/angular-ui-router.min.js"></script>
+</head>
+<body style="overflow-x: hidden">
+<div class="row" id="row" data-ng-init="load()" style="height: 100%;" ng-controller="main.ctrl">
+    <div class="sidebar" id="sidebar">
+        <div class="panel-group panelGroup" role="tablist">
+            <div class="panel panel-style leftMenu" ng-repeat="firNav in menu">
+                <div class="panel-heading panelHeading" index="{{firNav.order}}">
+                    <span class="glyphicon glyphicon-plus left glyPlus"></span>
+                    <h4 class="panel-title panelTitle" ng-bind="firNav.menuName"></h4>
+                </div>
+                <div class="panel-collapse secondNav">
+                    <ul class="list-group">
+                        <li class="list-group-item panel-sonmenu" ng-repeat="secNav in firNav.secondMenu | orderBy: 'order'  track by $index" ui-sref="{{secNav.templateUrl}}" index="{{secNav.order}}" ng-click="secTool(secNav.templateUrl)">
+                            <span ng-class="{'activeMenu': (path|matchPath:'{{secNav.templateUrl}}')}" class="glyphicon glyphicon-triangle-right arrowRight"></span>
+                            <a class="menu-item-left" href="javascript:void(0)" ng-class="{'activeMenu': (path|matchPath:'{{secNav.templateUrl}}')}" ng-bind="secNav.menuName"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="showList">
+        <span class="glyphicon glyphicon-align-justify listBtn"></span>
+    </div>
+    <div id="viewArea" ui-view></div>
+</div>
+
+<script src="static/js/app_main.js"></script>
+<script src="static/js/ctrl_main.js"></script>
+<script src="static/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "menu":[
+    {
+      "order":1,
+      "menuName":"登录",
+      "routeName":"login",
+      "secondMenu":[
+        { "order":1,
+          "menuName":"登录—第一个",
+          "templateUrl":"login/first",
+          "urlInfo":"login_first.json",
+          "remark":"第一个"
+        },
+        { "order":2,
+          "menuName":"登录—第二个",
+          "templateUrl":"login/second",
+          "urlInfo":"login_second.json",
+          "remark":"第二个"
+        }
+      ]
+    },
+    {
+      "order":2,
+      "menuName":"首页",
+      "routeName":"index",
+      "secondMenu":[
+        { "order":1,
+          "menuName":"首页—首页自定义",
+          "templateUrl":"index/userDefined",
+          "urlInfo":"index_userDefined.json",
+          "remark":"首页自定义"
+        },
+        { "order":2,
+          "menuName":"首页—常用功能",
+          "templateUrl":"index/commonFn",
+          "urlInfo":"index_commonFn.json",
+          "remark":"常用功能"
+        }
+      ]
+    },
+    {
+      "order":3,
+      "menuName":"账户",
+      "routeName":"account",
+      "secondMenu":[
+        { "order":1,
+          "menuName":"账户总览",
+          "templateUrl":"account/accOverview",
+          "urlInfo":"account_accOverview.json",
+          "remark":"账户总览"
+        },
+        { "order":2,
+          "menuName":"持仓查询",
+          "templateUrl":"account/positionQuery",
+          "urlInfo":"account_positionQuery.json",
+          "remark":"持仓查询"
+        },
+        { "order":3,
+          "menuName":"转账",
+          "templateUrl":"account/transfer",
+          "urlInfo":"account_transfer.json",
+          "remark":"转账"
+        }
+      ]
+    },
+    {
+      "order":4,
+      "menuName":"行情",
+      "routeName":"market",
+      "secondMenu":[
+        { "order":1,
+          "menuName":"菜单栏",
+          "templateUrl":"market/menuBar",
+          "urlInfo":"market_menuBar.json",
+          "remark":"菜单栏"
+        },
+        { "order":2,
+          "menuName":"自选股",
+          "templateUrl":"market/selfstock",
+          "urlInfo":"market_selfstock.json",
+          "remark":"自选股"
+        }
+      ]
+    }
+  ]
+}
+
